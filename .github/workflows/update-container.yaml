@@ -35,8 +35,22 @@ jobs:
       - name: Push Docker image to ECR
         run: docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:latest
 
-      # Run K8 Manifests
-      - name: Update Kubernetes deployment
-        run: |
-          kubectl set image deployment/eks-fe eks-fe=ghcr.io/yourusername/eks-fe:latest --record
-          kubectl rollout status deployment/eks-fe
+      # Run Namespace Manifest
+      - name: Apply Network Manifests
+        run: kubectl apply -f manifest/networkpolicy.yaml
+
+      # Run Deployment Manifest
+      - name: Apply Network Manifests
+        run: kubectl apply -f manifest/deployment.yaml
+
+      # Run Service Manifest
+      - name: Apply Network Manifests
+        run: kubectl apply -f manifest/service.yaml
+
+      # Run HPA Manifest
+      - name: Apply Network Manifests
+        run: kubectl apply -f manifests/hpa.yaml
+
+      # Run Ingress Manifest
+      - name: Apply Network Manifests
+        run: kubectl apply -f manifests/ingress.yaml
