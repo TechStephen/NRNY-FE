@@ -1,0 +1,21 @@
+# eks fargate deployment manifest
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-fe
+  namespace: eks-fargate-fe
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: eks-fe
+  template:
+    metadata:
+      labels:
+        app: eks-fe
+    spec:
+      containers:
+        - name: eks-fe
+          image: ghcr.io/yourusername/eks-fe:latest
+          ports:
+            - containerPort: 3000
