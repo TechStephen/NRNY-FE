@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: eks-fargate-fe
+  name: qa-eks-fargate-fe

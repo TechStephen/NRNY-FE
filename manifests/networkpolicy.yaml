@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: allow-ms-to-fe
-  namespace: eks-fargate-fe
+  namespace: qa-eks-fargate-fe
 spec:
   podSelector:
     matchLabels:
@@ -14,7 +14,7 @@ spec:
     - from:
         - namespaceSelector:
             matchLabels:
-              name: eks-fargate-ms
+              name: qa-eks-fargate-ms
   egress:
     - to:
         - ipBlock:

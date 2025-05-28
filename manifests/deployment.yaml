@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: eks-fe
-  namespace: eks-fargate-fe
+  namespace: qa-eks-fargate-fe
 spec:
   replicas: 3
   selector:
