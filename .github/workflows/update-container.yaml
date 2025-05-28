@@ -35,6 +35,10 @@ jobs:
       - name: Push Docker image to ECR
         run: docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:latest
 
+      # Update Kubeconfig (Needed for kubectl commands)
+      - name: Update kubeconfig (needed for kubectl commands)
+        run: aws eks update-kubeconfig --name qa-eks-cluster --region us-east-1
+
       # Run Namespace Manifest
       - name: Apply Network Manifests
         run: kubectl apply -f manifests/namespace.yaml
