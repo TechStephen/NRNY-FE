@@ -35,26 +35,26 @@ jobs:
       - name: Push Docker image to ECR
         run: docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:latest
 
-      # Run Namespace Manifest
-      - name: Apply Network Manifests
-        run: kubectl apply -f manifest/namespace.yaml
+      # # Run Namespace Manifest
+      # - name: Apply Network Manifests
+      #   run: kubectl apply -f manifests/namespace.yaml
 
-      # Run Network Policy Manifest
-      - name: Apply Network Manifests
-        run: kubectl apply -f manifest/networkpolicy.yaml
+      # # Run Network Policy Manifest
+      # - name: Apply Network Manifests
+      #   run: kubectl apply -f manifests/networkpolicy.yaml
 
-      # Run Deployment Manifest
-      - name: Apply Network Manifests
-        run: kubectl apply -f manifest/deployment.yaml
+      # # Run Deployment Manifest
+      # - name: Apply Network Manifests
+      #   run: kubectl apply -f manifests/deployment.yaml
 
-      # Run Service Manifest
-      - name: Apply Network Manifests
-        run: kubectl apply -f manifest/service.yaml
+      # # Run Service Manifest
+      # - name: Apply Network Manifests
+      #   run: kubectl apply -f manifests/service.yaml
 
-      # Run HPA Manifest
-      - name: Apply Network Manifests
-        run: kubectl apply -f manifests/hpa.yaml
+      # # Run HPA Manifest
+      # - name: Apply Network Manifests
+      #   run: kubectl apply -f manifests/hpa.yaml
 
-      # Run Ingress Manifest
-      - name: Apply Network Manifests
-        run: kubectl apply -f manifests/ingress.yaml
+      # # Run Ingress Manifest
+      # - name: Apply Network Manifests
+      #   run: kubectl apply -f manifests/ingress.yaml
