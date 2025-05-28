@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: eks-fe
-          image: ghcr.io/yourusername/eks-fe:latest
+          image: 767398032512.dkr.ecr.us-east-1.amazonaws.com/eks-app/fe:latest
           ports:
             - containerPort: 3000
