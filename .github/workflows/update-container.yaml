@@ -41,24 +41,24 @@ jobs:
 
       # Run Namespace Manifest
       - name: Apply Namespace Manifest
-        run: kubectl apply -f manifests/namespace.yaml --validate=false
+        run: kubectl apply -f manifests/namespace.yaml
 
       # Run Network Policy Manifest
       - name: Apply Network Manifest
-        run: kubectl apply -f manifests/networkpolicy.yaml --validate=false
+        run: kubectl apply -f manifests/networkpolicy.yaml
 
       # Run Deployment Manifest
       - name: Apply Deployment Manifest
-        run: kubectl apply -f manifests/deployment.yaml --validate=false
+        run: kubectl apply -f manifests/deployment.yaml
 
       # Run Service Manifest
       - name: Apply Service Manifest
-        run: kubectl apply -f manifests/service.yaml --validate=false
+        run: kubectl apply -f manifests/service.yaml
 
       # Run HPA Manifest
       - name: Apply HPA Manifest
-        run: kubectl apply -f manifests/hpa.yaml --validate=false
+        run: kubectl apply -f manifests/hpa.yaml
 
       # Run Ingress Manifest
       - name: Apply Ingress Manifest
-        run: kubectl apply -f manifests/ingress.yaml --validate=false
+        run: kubectl apply -f manifests/ingress.yaml
